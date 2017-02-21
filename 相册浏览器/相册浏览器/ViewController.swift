@@ -10,22 +10,50 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //==========================================================================================================
+    // MARK: - 自定义属性
+    //==========================================================================================================
+
     // cell的标识符
     let cellIdentifier = "cell"
+    
+    // 布局
+     let layout = UICollectionViewFlowLayout()
+    
+    //==========================================================================================================
+    // MARK: - 系统初始化方法
+    //==========================================================================================================
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 布局
-        let layout = UICollectionViewFlowLayout()
+        // 设置布局
+        setupLayout()
+
+        
+        // 设置collectionView
+        setupCollectionView()
+    }
+    //==========================================================================================================
+    // MARK: - 自定义初始化方法
+    //==========================================================================================================
+
+    /**
+     设置布局
+     */
+    func setupLayout() {
+        
         layout.itemSize = CGSize(width: 160, height: 160)
         // 滚动方向
         layout.scrollDirection = UICollectionViewScrollDirection.Horizontal
         // 最小行间距
         layout.minimumLineSpacing = 50
-
-        
-        // 设置collectionView
+    }
+    
+    /**
+     设置collectioView
+     */
+    func setupCollectionView() {
         let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
         // 一定要先设置中心文字在设置bounds
         collectionView.center = self.view.center
@@ -41,9 +69,9 @@ class ViewController: UIViewController {
         let nib = UINib(nibName: "\(PhotoCell.self)", bundle: nil)
         collectionView.registerNib(nib, forCellWithReuseIdentifier: cellIdentifier)
     }
-
 }
 
+// MARK: - UICollectionViewDataSource
 extension ViewController: UICollectionViewDataSource
 {
     // 每组有多少个
