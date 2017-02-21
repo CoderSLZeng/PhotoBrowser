@@ -47,4 +47,41 @@ class CustomFlowLayout: UICollectionViewFlowLayout {
         return attrs
     }
 
+    // 用户手指一松开就会调用，注意：拖动比较快，最终的偏移量 ≠ 手指离开的偏移量
+    // 确定最终的偏移量
+    // 距离中心点越近,这个cell最终展示到中心点位置
+    override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        
+        // 最终的偏移量
+        var targetP = super.targetContentOffsetForProposedContentOffset(proposedContentOffset, withScrollingVelocity: velocity)
+        
+        // collection的宽度
+        let collectionW = collectionView!.bounds.width
+        
+        // 最终显示区域
+        let targetRect = CGRect(x: targetP.x, y: CGFloat(0), width: collectionW, height: CGFloat(MAXFLOAT))
+        
+        // 获取最终显示的cell
+        let attrs = super.layoutAttributesForElementsInRect(targetRect)
+        
+        // 获取最小间距
+        var minDelta = CGFloat(MAXFLOAT)
+        for attr in attrs! {
+            // 获取距离中心点距离：注意应该用最终的x
+            let delta = (attr.center.x - targetP.x) - collectionW * 0.5
+            
+            if fabs(delta) < fabs(minDelta) {
+                minDelta = delta
+            }
+        }
+        // 移动间距
+        targetP.x += minDelta
+        
+        // 判断最小值等于=0
+        if targetP.x < 0 {
+            targetP.x = 0
+        }
+        
+        return targetP
+    }
 }
