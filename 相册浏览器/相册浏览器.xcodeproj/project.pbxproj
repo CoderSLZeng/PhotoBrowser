@@ -14,6 +14,7 @@
 		9210521A1E5C39970053D16E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921052181E5C39970053D16E /* LaunchScreen.storyboard */; };
 		921052231E5C3C7A0053D16E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921052211E5C3C7A0053D16E /* PhotoCell.swift */; };
 		921052241E5C3C7A0053D16E /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921052221E5C3C7A0053D16E /* PhotoCell.xib */; };
+		921052261E5C45DC0053D16E /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921052251E5C45DC0053D16E /* CustomFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9210521B1E5C39970053D16E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		921052211E5C3C7A0053D16E /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		921052221E5C3C7A0053D16E /* PhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		921052251E5C45DC0053D16E /* CustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				9210520F1E5C39970053D16E /* AppDelegate.swift */,
 				921052111E5C39970053D16E /* ViewController.swift */,
+				921052251E5C45DC0053D16E /* CustomFlowLayout.swift */,
 				921052211E5C3C7A0053D16E /* PhotoCell.swift */,
 				921052221E5C3C7A0053D16E /* PhotoCell.xib */,
 				921052131E5C39970053D16E /* Main.storyboard */,
@@ -144,6 +147,7 @@
 			files = (
 				921052121E5C39970053D16E /* ViewController.swift in Sources */,
 				921052231E5C3C7A0053D16E /* PhotoCell.swift in Sources */,
+				921052261E5C45DC0053D16E /* CustomFlowLayout.swift in Sources */,
 				921052101E5C39970053D16E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

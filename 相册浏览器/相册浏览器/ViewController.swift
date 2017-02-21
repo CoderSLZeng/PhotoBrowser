@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     let cellIdentifier = "cell"
     
     // 布局
-     let layout = UICollectionViewFlowLayout()
+     let layout = CustomFlowLayout()
     
     //==========================================================================================================
     // MARK: - 系统初始化方法
