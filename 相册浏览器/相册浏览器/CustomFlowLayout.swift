@@ -11,7 +11,9 @@ import UIKit
 class CustomFlowLayout: UICollectionViewFlowLayout {
     
     /**
-     在滚动的时候是否允许刷新
+     *  在滚动的时候是否允许刷新
+        只要显示的边界发生改变就重新布局:
+        内部会重新调用prepareLayout和layoutAttributesForElementsInRect方法获得所有cell的布局属性
      */
     override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
         return true
@@ -50,6 +52,12 @@ class CustomFlowLayout: UICollectionViewFlowLayout {
     // 用户手指一松开就会调用，注意：拖动比较快，最终的偏移量 ≠ 手指离开的偏移量
     // 确定最终的偏移量
     // 距离中心点越近,这个cell最终展示到中心点位置
+    /**
+     *  用来设置collectionView停止滚动那一刻的位置
+     *
+     *  @param proposedContentOffset 原本collectionView停止滚动那一刻的位置
+     *  @param velocity              滚动速度
+     */
     override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         
         // 最终的偏移量
